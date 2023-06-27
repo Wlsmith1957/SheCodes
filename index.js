@@ -1,24 +1,41 @@
 let date = new Date();
 let h2 = document.querySelector("h2");
 let hours = date.getHours();
+hours = hours % 12;
+hours = hours ? hours : 12;
 
 let minutes = date.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-let seconds = date.getSeconds();
 
 let days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 let day = days[date.getDay()];
-h2.innerHTML = `${day} ${hours}:${minutes}:${seconds}`;
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let month = months[date.getMonth()];
+h2.innerHTML = `${month} ${day} ${hours}:${minutes}`;
 
 function displayWeather(response) {
   console.log(response);
@@ -91,3 +108,4 @@ function convertToFahrenheit(event) {
   let fahrenheitLink = document.querySelector("#fahrenheit-link");
   fahrenheitLink.addEventListener("click", convertToFahrenheit);
 }
+
