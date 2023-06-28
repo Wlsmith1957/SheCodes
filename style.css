@@ -17,7 +17,7 @@ h4 {
   margin-top: (var(--bs-gutter-y) * 1.5);
 }
 card {
-  align-items: center;
+  align-items: left;
   background: rgb(173, 206, 206);
   position: fixed;
   display: flex;
